@@ -213,6 +213,8 @@ function getColor(type) {
 map.locate({setView: true, maxZoom: 16});
 function onLocationFound(e) {
     var radius = e.accuracy;
+  
+  mycoordinates = e.latlng;
 
     L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
